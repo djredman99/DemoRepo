@@ -3,14 +3,18 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+#Build Name
 name: $(Date:yyyyMMdd)$(Rev:.r)
 
+# The trigger
 trigger:
 - master
 
+#Agent Pool
 pool:
   vmImage: 'ubuntu-latest'
 
+# Steps
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
