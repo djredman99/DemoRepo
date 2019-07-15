@@ -6,6 +6,7 @@
 # Build name
 name: $(Date:yyyyMMdd)$(Rev:.r)
 
+#Build trigger
 trigger:
 - master
 
