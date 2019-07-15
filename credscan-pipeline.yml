@@ -10,6 +10,7 @@ name: $(Date:yyyyMMdd)$(Rev:.r)
 trigger:
 - master
 
+#Agent Pool
 pool:
   vmImage: 'ubuntu-latest'
 
