@@ -3,10 +3,10 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-#Build Name
+# Build name
 name: $(Date:yyyyMMdd)$(Rev:.r)
 
-# The trigger
+#Build trigger
 trigger:
 - master
 
