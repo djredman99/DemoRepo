@@ -25,11 +25,16 @@ steps:
 - script: |
     pip3 install pytest
     pip3 install pytest-cov
-  displayName: 'Install pytest'
+  displayName: Install pytest
 
 - script: |
     pwd
-  displayName: "Show Path"
+  displayName: Show Path
+
+- script: |
+    which pytest
+    which pytest-cov
+  displayName: Check pytest and pytest-cov path
 
 - script: |
     pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
