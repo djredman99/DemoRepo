@@ -32,6 +32,7 @@ steps:
   displayName: Show Path
 
 - script: |
+    echo $PATH
     whereis pytest
   displayName: Check pytest and pytest-cov path
 
