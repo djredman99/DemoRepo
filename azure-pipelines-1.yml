@@ -37,7 +37,7 @@ steps:
 #  displayName: Check pytest and pytest-cov path
 
 - script: |
-    /usr/local/bin/pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+    hash -r pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
   displayName: 'Run Tests'
 
 - script: |
