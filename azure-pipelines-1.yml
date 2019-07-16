@@ -44,7 +44,9 @@ steps:
   displayName: Check pytest and pytest-cov path
 
 - script: |
-    cd /home/vsts/.local/lib/python3.5/site-packages/ && pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html ; cd - 
+    cd /c
+    cd /home/vsts/.local/lib/python3.5/site-packages/ 
+    pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
   displayName: 'Run Tests'
 
 - script: |
