@@ -15,9 +15,6 @@ steps:
     python -m pip install --upgrade pip setuptools wheel
   displayName: 'Install tools'
 
-- script: pip install -r requirements.txt
-  displayName: 'Install requirements'
-
 - script: |
     which python
     python3 --version
@@ -28,7 +25,12 @@ steps:
 - script: |
     pip3 install -U pytest
     pip3 install pytest-cov
+    pip3 list
   displayName: Install pytest
+
+- script: |
+    pip3 list
+  displayName: List pip packages
 
 - script: |
     pwd
