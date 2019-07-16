@@ -15,8 +15,12 @@ steps:
     python -m pip install --upgrade pip setuptools wheel
   displayName: 'Install tools'
 
-- script: pip install -r requirements.txt
-  displayName: 'Install requirements'
+- script: |
+    which python
+    python --version
+    which pip
+    pip --version
+  displayName: Check Python and pip versions
 
 - script: |
     python -m pip install flake8
