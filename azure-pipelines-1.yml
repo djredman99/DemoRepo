@@ -23,8 +23,9 @@ steps:
   displayName: Check Python and pip versions
 
 - script: |
-    pip3 install pytest
+    pip3 install -U pytest
     pip3 install pytest-cov
+    pytest --version
   displayName: Install pytest
 
 - script: |
