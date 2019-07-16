@@ -34,8 +34,6 @@ steps:
 - script: |
     echo $PATH
     whereis pytest
-    hash -d pytest
-    hash -t pytest
   displayName: Check pytest and pytest-cov path
 
 - script: |
