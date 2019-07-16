@@ -26,6 +26,8 @@ steps:
     pip3 install -U pytest
     pip3 install pytest-cov
     pip3 list
+    pip3 show pytest
+    pip3 show pytest-cov
   displayName: Install pytest
 
 - script: |
