@@ -22,7 +22,7 @@ steps:
     pip3 --version
   displayName: Check Python and pip versions
 
-- script: pip3 install -r requirements.txt
+- script: pip install -r requirements.txt
   displayName: Install requirements
 
 - script: |
