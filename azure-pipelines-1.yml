@@ -31,13 +31,12 @@ steps:
     pwd
   displayName: Show Path
 
-#- script: |
-#    which pytest
-#    which pytest-cov
-#  displayName: Check pytest and pytest-cov path
+- script: |
+    whereis pytest
+  displayName: Check pytest and pytest-cov path
 
 - script: |
-    hash -r pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+    hash -d pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
   displayName: 'Run Tests'
 
 - script: |
