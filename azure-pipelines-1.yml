@@ -31,13 +31,13 @@ steps:
     pwd
   displayName: Show Path
 
-- script: |
-    which pytest
-    which pytest-cov
-  displayName: Check pytest and pytest-cov path
+#- script: |
+#    which pytest
+#    which pytest-cov
+#  displayName: Check pytest and pytest-cov path
 
 - script: |
-    pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+    /usr/local/bin/pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
   displayName: 'Run Tests'
 
 - script: |
