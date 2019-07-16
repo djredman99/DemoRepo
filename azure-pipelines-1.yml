@@ -11,9 +11,9 @@ pool:
 
 steps:
 
-#- script: |
-#    python -m pip install --upgrade pip setuptools wheel
-#  displayName: 'Install tools'
+- script: |
+    python -m pip install --upgrade pip setuptools wheel
+  displayName: 'Install tools'
 
 - script: |
     which python
@@ -25,8 +25,11 @@ steps:
 - script: |
     pip3 install pytest
     pip install pytest-cov
-#    pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
-  displayName: 'Test with pytest'
+  displayName: 'Install pytest'
+
+  - script: |
+    pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+  displayName: 'Run Tests'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
