@@ -12,7 +12,7 @@ pool:
 steps:
 
 - script: |
-    python -m pip install --upgrade pip setuptools wheel
+    python -m pip3 install --upgrade pip3 setuptools wheel
   displayName: 'Install tools'
 
 - script: |
@@ -24,7 +24,7 @@ steps:
 
 - script: |
     pip3 install pytest
-    pip install pytest-cov
+    pip3 install pytest-cov
   displayName: 'Install pytest'
 
 - script: |
