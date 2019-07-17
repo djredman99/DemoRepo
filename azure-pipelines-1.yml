@@ -22,8 +22,8 @@ steps:
     pip3 --version
   displayName: Check Python and pip versions
 
-#- script: python3 -m pip install -r requirements.txt
-#  displayName: Install requirements
+- script: python -m pip install -r requirements.txt
+  displayName: Install requirements
 
 - script: |
     pip3 install pytest
