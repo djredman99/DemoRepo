@@ -48,7 +48,7 @@ steps:
     sudo ln -s /home/vsts/.local/lib/python3.5/site-packages/pytest /usr/bin/pytest
     sudo ln -s /home/vsts/.local/lib/python3.5/site-packages/pytest-cov /usr/bin/pytest-cov
   displayName: Create Symlink
-  enabled: true
+  enabled: false
 
 - script: |
     echo $PATH
