@@ -56,7 +56,7 @@ steps:
 #    python3 -m pytest unit_test.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
   displayName: 'Run Tests'
 
-  task: PublishTestResults@2
+- task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:
     testResultsFiles: '**/test-*.xml'
