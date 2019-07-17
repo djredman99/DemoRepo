@@ -15,15 +15,17 @@ steps:
 #    python -m pip install --upgrade pip setuptools wheel
 #  displayName: 'Install tools'
 
-#- script: |
-#    which python
-#    python3 --version
-#    which pip3
-#    pip --version
-#  displayName: Check Python and pip versions
+- script: |
+    which python
+    python3 --version
+    which pip3
+    pip --version
+  displayName: Check Python and pip versions
+  enabled: false
 
-#- script: pip3 install -r requirements.txt
-#  displayName: Install requirements
+- script: pip3 install -r requirements.txt
+  displayName: Install requirements
+  enabled: false
 
 - script: |
     pip3 install pytest
@@ -36,6 +38,7 @@ steps:
 - script: |
     pip3 list
   displayName: List pip packages
+  enabled: false
 
 - script: |
     pwd
@@ -44,16 +47,19 @@ steps:
 - script: |
     echo $PATH
     whereis pytest
+    whereis pytest-cov
   displayName: Check pytest and pytest-cov path
 
-#- script: |
-#    sudo ln -s /home/vsts/.local/lib/python3.5/site-packages/pytest /usr/bin/pytest
-#  displayName: Create Symlink
+- script: |
+    sudo ln -s /home/vsts/.local/lib/python3.5/site-packages/pytest /usr/bin/pytest
+    sudo ln -s /home/vsts/.local/lib/python3.5/site-packages/pytest-cov /usr/bin/pytest-cov
+  displayName: Create Symlink
+  enabled: true
 
 - script: |
     pwd
-    python3 -m pytest unit_test.py --doctest-modules --junitxml=junit/test-results.xml 
-#    python3 -m pytest unit_test.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+    python3 -m pytest unit_test.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html 
+#    python3 -m pytest unit_test.py --doctest-modules --junitxml=junit/test-results.xml
   displayName: 'Run Tests'
 
 - task: PublishTestResults@2
