@@ -11,9 +11,9 @@ pool:
 
 steps:
 
-- script: |
-    python -m pip install --upgrade pip setuptools wheel
-  displayName: 'Install tools'
+#- script: |
+#    python -m pip install --upgrade pip setuptools wheel
+#  displayName: 'Install tools'
 
 #- script: |
 #    which python
@@ -22,8 +22,8 @@ steps:
 #    pip --version
 #  displayName: Check Python and pip versions
 
-- script: pip3 install -r requirements.txt
-  displayName: Install requirements
+#- script: pip3 install -r requirements.txt
+#  displayName: Install requirements
 
 - script: |
     pip3 install pytest
