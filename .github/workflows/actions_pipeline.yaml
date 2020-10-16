@@ -1,3 +1,5 @@
+name: actions conversion of ADO Pipeline in daredman-Demo Project
+on: [push]
 jobs:
   scripts:
     runs-on: windows-latest
