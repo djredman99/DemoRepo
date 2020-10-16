@@ -1,0 +1,13 @@
+trigger:
+  enabled: false
+stages:
+- stage: __default
+  jobs:
+  - job: Job
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: CmdLine@2
+      displayName: Run Cred Scan
+      inputs:
+        script: echo Simulate Credential scanning!
