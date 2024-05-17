@@ -1,0 +1,16 @@
+name: ENV Precedence
+
+on: workflow_dispatch
+env:
+  THE_VAR: "workflow_value"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step Var
+        env:
+          THE_VAR: "step_value"
+        run: echo $THE_VAR
+
+      - name: Not Set Var
+        run: echo $THE_VAR
